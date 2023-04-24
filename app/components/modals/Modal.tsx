@@ -32,7 +32,9 @@ const Modal: React.FC<ModalProps> = ({
   const [showModal, setShowModal] = useState(isOpen);
   const overlayRef = useRef(null);
 
-  const handleOverlayClose = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+  const overlayCloseHandler = (
+    e: React.MouseEvent<HTMLElement, MouseEvent>
+  ) => {
     if (e.target === overlayRef.current) {
       onClose();
     }
@@ -42,7 +44,7 @@ const Modal: React.FC<ModalProps> = ({
     setShowModal(isOpen);
   }, [isOpen]);
 
-  const handleCloseModal = useCallback(() => {
+  const modalCloseHandler = useCallback(() => {
     if (disabled) {
       return;
     }
@@ -81,7 +83,7 @@ const Modal: React.FC<ModalProps> = ({
     <Fragment>
       <div
         ref={overlayRef}
-        onClick={handleOverlayClose}
+        onClick={overlayCloseHandler}
         className="
     justify-center
     items-center
@@ -151,7 +153,7 @@ const Modal: React.FC<ModalProps> = ({
                 "
               >
                 <button
-                  onClick={handleCloseModal}
+                  onClick={modalCloseHandler}
                   className="
                 p-1
                 border-0
