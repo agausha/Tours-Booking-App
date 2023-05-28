@@ -3,12 +3,12 @@
 import axios from "axios";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modal";
 import Heading from "../heading/Heading";
 import Input from "../inputs/Input";
-import toast from "react-hot-toast";
 import useLoginModal from "@/app/hooks/useLoginModal ";
 
 const RegisterModal = () => {
